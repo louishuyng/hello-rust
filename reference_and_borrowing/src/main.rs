@@ -21,6 +21,10 @@ fn main() {
 
   let r3 = &mut s; // can use after r1 and r2 are no longer used
   println!("{}", r3);
+
+  // let reference_to_nothing = dangle();
+  let reference = not_dangle();
+  println!("{}", reference);
 }
 
 fn calculate_length(s: &String) -> usize {
@@ -31,4 +35,16 @@ fn calculate_length(s: &String) -> usize {
 
 fn change(some_string: &mut String) {
   some_string.push_str(", world");
+}
+
+// fn dangle() -> &String {
+//   let s = String::from("hello");
+// 
+//   &s
+// }
+
+fn not_dangle() -> String {
+  let s = String::from("hello");
+
+  s
 }
