@@ -5,6 +5,11 @@ struct User {
   active: bool,
 }
 
+struct Rectangle {
+  width: u32,
+  height: u32,
+}
+
 fn main() {
   let user1 = User {
     username: String::from("louisror"),
@@ -32,6 +37,16 @@ fn main() {
   println!("struct tupple black first color is {}", black.0);
   println!("struct tupple black second color is {}", black.1);
   println!("struct tupple black third color is {}", black.2);
+  
+  let rect1 = Rectangle {
+      width: 30,
+      height: 50,
+  };
+
+  println!(
+      "The area of the rectangle is {} square pixels.",
+      area(&rect1)
+  );
 }
 
 fn build_user(email: String, username: String) -> User {
@@ -41,4 +56,8 @@ fn build_user(email: String, username: String) -> User {
     sign_in_count: 1,
     active: true
   }
+}
+
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
 }
