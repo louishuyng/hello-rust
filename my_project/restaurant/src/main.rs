@@ -2,6 +2,13 @@ use std::fmt::Result;
 use std::io::Result as IoResult;
 use rand::Rng;
 
+// Nested Packages
+use std::{cmp::Ordering, io};
+use std::io::{self, Write};
+
+// Glob Operator
+use std::collections::*;
+
 fn main() {
   restaurant::eat_at_restaurant();
   restaurant::hosting::add_to_waitlist();
